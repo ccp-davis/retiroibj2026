@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retiro Espiritual 2026 - IBJ</title>
+    
+    <link rel="icon" type="image/png" href="https://iili.io/fPkRN5u.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #37e6a6; 
+            --dark-bg: #0d0d0d;
+            --section-alt-bg: #121212;
+            --text-white: #ffffff;
+            --light-gray: #f8f9fa;
+            --accent-green: #1a8b64;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://iili.io/fPeLtbS.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .church-logo { width: 140px; margin-bottom: 20px; }
+        .hashtag { font-size: 1.5rem; font-weight: bold; color: var(--primary-green); letter-spacing: 2px; margin: 0; }
+        h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 10vw, 5.5rem); margin: 5px 0; color: var(--primary-green); line-height: 1; }
+        
+        .date-badge {
+            background: #ffffff;
+            color: var(--accent-green);
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0, 230, 166, 0.3);
+        }
+
+        .countdown-wrapper { width: 100%; max-width: 700px; display: grid; gap: 20px; margin: 30px 0; }
+        .countdown-box {
+            background: rgba(0, 230, 166, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--primary-green);
+            backdrop-filter: blur(5px);
+        }
+        .countdown-box h3 { font-family: 'Bebas Neue', sans-serif; margin: 0 0 10px 0; font-size: 1.5rem; letter-spacing: 1px; }
+        .timer { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: #fff; }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .btn-whatsapp img { width: 25px; }
+        .btn-whatsapp:hover { background: #128c7e; transform: translateY(-3px); }
+
+        /* Sobre o Retiro */
+        .about-section { padding: 100px 20px; text-align: center; background-color: #ffffff; color: #1a1a1a; }
+        .section-title { color: var(--accent-green); font-size: 2.5rem; text-transform: uppercase; margin-bottom: 10px; font-weight: 800; }
+        .about-text { font-size: 1.15rem; line-height: 1.8; color: #333; max-width: 900px; margin: 0 auto; }
+
+        /* Carrossel */
+        .carousel-section { padding: 100px 0; background-color: var(--section-alt-bg); }
+        .carousel-subtitle { color: #ffffff; font-size: 1.2rem; text-align: center; margin-bottom: 40px; font-weight: 700; font-style: italic; }
+        .carousel-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        .carousel-track { display: flex; transition: transform 0.8s ease-in-out; align-items: center; }
+        .carousel-slide { min-width: 100%; display: flex; justify-content: center; align-items: center; height: auto; }
+        .carousel-slide img { 
+            max-width: 100%; 
+            height: auto; 
+            max-height: 80vh; 
+            display: block; 
+            border-radius: 10px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+            object-fit: contain;
+        }
+
+        /* Inscrição e Pagamento */
+        .payment-section { padding: 100px 20px; background: #fff; color: #1a1a1a; }
+        .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto; align-items: start; }
+        
+        .investment-box { text-align: left; background: var(--light-gray); padding: 30px; border-radius: 20px; }
+        .price-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed #ccc; font-weight: 700; }
+        .price-label { color: #555; }
+        .price-value { color: var(--accent-green); font-size: 1.2rem; }
+
+        .payment-info-text { margin-top: 25px; font-size: 0.95rem; line-height: 1.6; color: #1a1a1a; border-top: 2px solid var(--primary-green); padding-top: 15px; }
+
+        .pix-payment-box { text-align: center; }
+        .pix-key-display { background: var(--dark-bg); color: var(--primary-green); padding: 15px; border-radius: 10px; font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; display: block; }
+        
+        .qr-link { display: inline-block; transition: transform 0.3s; text-decoration: none; color: inherit; }
+        .qr-link:hover { transform: scale(1.05); }
+        .qr-code-img { width: 240px; margin-top: 20px; border-radius: 10px; padding: 10px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #eee; }
+
+        /* Local do Retiro */
+        .local-section { padding: 100px 20px; background: var(--dark-bg); }
+        .local-grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: center; }
+        .local-grid img { width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .structure-list { list-style: none; padding: 0; text-align: left; }
+        .structure-list li { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; color: #eee; }
+        .structure-list li::before { content: '✓'; color: var(--primary-green); font-weight: 900; font-size: 1.8rem; }
+
+        /* Rodapé */
+        footer {
+            background: linear-gradient(135deg, #ffffff 0%, #e8fdf5 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: #333;
+            border-top: 1px solid #ddd;
+        }
+        .footer-logo { width: 280px; margin-bottom: 25px; }
+        .footer-info { max-width: 1000px; margin: 0 auto; font-size: 0.9rem; line-height: 1.8; font-weight: 500; }
+        .footer-divider { color: var(--primary-green); font-weight: bold; padding: 0 8px; }
+
+        @media (max-width: 900px) {
+            .payment-grid, .local-grid, .countdown-wrapper { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <img src="https://iili.io/fPkRN5u.png" alt="Logo IBJ" class="church-logo">
+        
+        <p class="hashtag">#IBJ21ANOS</p>
+        <h1>RETIRO ESPIRITUAL 2026</h1>
+        <div class="date-badge">13/02 a 17/02 | Chácara Status</div>
+
+        <div class="countdown-wrapper">
+            <div class="countdown-box">
+                <h3>FALTAM PARA O RETIRO:</h3>
+                <div id="customCountdown" class="timer"></div>
+            </div>
+            <div class="countdown-box">
+                <h3>OU (CONTAGEM DETALHADA):</h3>
+                <div id="countdownSoma" class="timer"></div>
+            </div>
+        </div>
+
+        <a href="https://bit.ly/retiroibj26" class="btn-whatsapp">
+            <img src="https://iili.io/fPeplBS.png" alt="WhatsApp">
+            MAIS INFORMAÇÕES E INSCRIÇÃO
+        </a>
+    </section>
+
+    <section class="about-section">
+        <h2 class="section-title">Sobre o nosso Retiro</h2>
+        <div class="about-text">
+            <p>Um tempo de renovo, comunhão intensa e busca pela presença de Deus. Nosso retiro é o momento perfeito para desconectar do mundo e reconectar com o que realmente importa. Prepare seu coração para dias inesquecíveis em meio à natureza na Chácara Status.</p>
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <h2 class="section-title" style="color: var(--primary-green); text-align: center;">Memórias que Transformam</h2>
+        <p class="carousel-subtitle">momentos do nosso último retiro</p>
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide"><img src="https://iili.io/fPvEY8l.png" alt="Foto 1"></div>
+                <div class="carousel-slide"><img src="https://iili.io/fPvE7a4.png" alt="Foto 2"></div>
+                <div class="carousel-slide"><img src="https://iili.io/fPvEc92.png" alt="Foto 3"></div>
+                <div class="carousel-slide"><img src="https://iili.io/fPvEluS.png" alt="Foto 4"></div>
+                <div class="carousel-slide"><img src="https://iili.io/fPvEXFj.png" alt="Foto 5"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="payment-section">
+        <div class="payment-grid">
+            <div class="investment-box">
+                <h2 style="margin-top:0">Investimento</h2>
+                <div class="price-item"><span class="price-label">Adulto (11 anos +)</span> <span class="price-value">R$ 135,00</span></div>
+                <div class="price-item"><span class="price-label">Criança (5-10 anos)</span> <span class="price-value">R$ 75,00</span></div>
+                <div class="price-item"><span class="price-label">Criança (0-4 anos)</span> <span class="price-value">Uma Oferta</span></div>
+                <div class="price-item"><span class="price-label">Diária</span> <span class="price-value">R$ 40,00</span></div>
+                
+                <div class="payment-info-text">
+                    <strong>Formas de Pagamento:</strong><br>
+                    Cartão (Crédito e Débito), Dinheiro ou Pix.<br>
+                    Cartão de Crédito: 1 Retiro (2x) | 2 ou mais Retiros (3x) | Ambos sem juros.
+                </div>
+            </div>
+
+            <div class="pix-payment-box">
+                <h2 style="margin-top:0">Inscrição e Pagamento</h2>
+                <p>Chave Pix (Telefone):</p>
+                <span class="pix-key-display">65 99844-6011</span>
+                <p>Link para Inscrição: <br><a href="https://bit.ly/retiroibj26" style="color:#007bff; font-weight:bold; text-decoration: none;">bit.ly/retiroibj26</a></p>
+                
+                <a href="https://bit.ly/retiroibj26" class="qr-link" target="_blank">
+                    <img src="https://iili.io/fPk3sOF.png" alt="QR Code Inscrição" class="qr-code-img">
+                </a>
+                <p style="font-size: 0.8rem; color: #777; margin-top: 5px; font-weight: bold;">(Clique ou escaneie o QR Code)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="local-section">
+        <h2 class="section-title" style="color: var(--primary-green); text-align: center; margin-bottom: 40px;">LOCAL DO NOSSO RETIRO</h2>
+        <div class="local-grid">
+            <img src="https://iili.io/fPebHZB.png" alt="Fotos da Chácara Status">
+            <ul class="structure-list">
+                <li>Piscina;</li>
+                <li>Refeitório;</li>
+                <li>Área Verde;</li>
+                <li>Espaço de Comunhão e Lazer;</li>
+                <li>Campo de Futebol;</li>
+                <li>Espaço para Barracas e Casa de Apoio;</li>
+                <li>Área de Cultos e Celebrações.</li>
+                
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <img src="https://iili.io/fPkQ1cb.png" alt="Logo Retiro" class="footer-logo">
+        <div class="footer-info">
+            Igreja Batista no Jardim <span class="footer-divider">|</span> 07.851.665/0001-58 <span class="footer-divider">|</span> Rua das Margaridas, Nº50, Jd. Padre Paulo, Cáceres-MT <br>
+            (65) 99844-6011 <span class="footer-divider">|</span> Pr. Anderson José <span class="footer-divider">|</span> OPBB7911
+        </div>
+    </footer>
+
+    <script>
+        const targetDate = new Date('2026-02-13T18:00:00');
+        function updateTimers() {
+            const now = new Date();
+            const diff = targetDate - now;
+            if (diff <= 0) {
+                document.querySelectorAll('.timer').forEach(el => el.innerHTML = "O RETIRO COMEÇOU!");
+                return;
+            }
+            const daysTotal = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const months = (diff / (1000 * 60 * 60 * 24 * 30)).toFixed(1);
+            const weeksTotal = (diff / (1000 * 60 * 60 * 24 * 7)).toFixed(1);
+            document.getElementById('customCountdown').innerHTML = `${months} Meses = ${weeksTotal} Semanas = ${daysTotal} Dias`;
+
+            const weeks = Math.floor(daysTotal / 7);
+            const days = daysTotal % 7;
+            const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+            const minutes = Math.floor(diff / (1000 * 60)) % 60;
+            const seconds = Math.floor(diff / 1000) % 60;
+            
+            document.getElementById('countdownSoma').innerHTML = `${weeks} Semanas + ${days} Dias + ${hours} Horas + ${minutes} Minutos + ${seconds} Segundos`;
+        }
+        setInterval(updateTimers, 1000);
+        updateTimers();
+
+        const track = document.getElementById('carouselTrack');
+        const slides = document.querySelectorAll('.carousel-slide');
+        let index = 0;
+        function nextSlide() {
+            index++;
+            if (index >= slides.length) { index = 0; }
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+        setInterval(nextSlide, 3000);
+    </script>
+</body>
+</html>
