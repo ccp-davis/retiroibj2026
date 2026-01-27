@@ -88,6 +88,7 @@
         .section-title { color: var(--accent-green); font-size: 2.5rem; text-transform: uppercase; margin-bottom: 10px; font-weight: 800; }
         .about-text { font-size: 1.15rem; line-height: 1.8; color: #333; max-width: 900px; margin: 0 auto; }
 
+        /* Carrossel */
         .carousel-section { 
             padding: 100px 0; 
             background-color: var(--section-alt-bg); 
@@ -109,33 +110,15 @@
             object-fit: cover;
         }
 
-        .carousel-content {
-            position: relative;
-            z-index: 1; 
-        }
-
+        .carousel-content { position: relative; z-index: 1; }
         .carousel-subtitle { color: #ffffff; font-size: 1.2rem; text-align: center; margin-bottom: 40px; font-weight: 700; font-style: italic; }
-        .carousel-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-        }
+        .carousel-container { max-width: 1300px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 15px; }
         .carousel-track { display: flex; transition: transform 0.8s ease-in-out; align-items: center; }
-        .carousel-slide { min-width: 100%; display: flex; justify-content: center; align-items: center; height: auto; }
-        .carousel-slide img { 
-            max-width: 100%; 
-            height: auto; 
-            max-height: 80vh; 
-            display: block; 
-            border-radius: 10px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
-            object-fit: contain;
-        }
+        .carousel-slide { min-width: 100%; display: flex; justify-content: center; align-items: center; }
+        .carousel-slide img { max-width: 100%; height: auto; max-height: 80vh; display: block; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: contain; }
 
         /* --- SEÇÃO DE PAGAMENTO --- */
-        .payment-section { padding: 60px 20px; background-color: #f4f4f4; }
+        .payment-section { padding: 80px 20px; background-color: #f4f4f4; }
         
         .payment-card {
             max-width: 1100px;
@@ -171,7 +154,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.2);
             font-weight: 700;
             font-size: 1.1rem;
-            gap: 10px; /* Evita colisão de textos */
+            gap: 15px;
         }
 
         .form-pag-box {
@@ -214,13 +197,7 @@
             transition: 0.3s;
         }
         .pix-container:hover { background-color: #f0f0f0; border-color: #1a8b64; }
-        .pix-key {
-            display: block;
-            font-size: clamp(1.4rem, 5vw, 2rem);
-            font-weight: 800;
-            color: #1a8b64;
-            margin-bottom: 5px;
-        }
+        .pix-key { display: block; font-size: clamp(1.2rem, 4.5vw, 2rem); font-weight: 800; color: #1a8b64; margin-bottom: 5px; }
         .pix-sub { font-size: 0.8rem; color: #777; font-weight: 600; }
 
         .qr-code-img {
@@ -229,19 +206,30 @@
             background: #fff;
             border: 1px solid #eee;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             animation: glowPulse 2s infinite ease-in-out;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .qr-code-img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 25px rgba(55, 230, 166, 0.6);
-        }
+        .qr-code-img:hover { transform: scale(1.1); box-shadow: 0 0 25px rgba(55, 230, 166, 0.6); }
 
         @keyframes glowPulse {
             0% { box-shadow: 0 0 5px rgba(55, 230, 166, 0.2); }
             50% { box-shadow: 0 0 15px rgba(55, 230, 166, 0.5); }
             100% { box-shadow: 0 0 5px rgba(55, 230, 166, 0.2); }
+        }
+
+        /* --- MEDIA QUERIES MOBILE CORRIGIDO --- */
+        @media (max-width: 900px) {
+            .payment-card { flex-direction: column; border-radius: 25px; }
+            .investment-side, .registration-side { width: 100%; padding: 40px 25px; box-sizing: border-box; }
+            
+            .price-row { 
+                font-size: 0.95rem; 
+                flex-wrap: wrap; /* Garante que o preço caia para baixo se não couber */
+            }
+            .price-row span:last-child { margin-left: auto; color: #fff; }
+
+            .local-grid, .countdown-wrapper { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.8rem; }
         }
 
         .local-section { padding: 100px 20px; background: var(--dark-bg); }
@@ -251,24 +239,10 @@
         .structure-list li { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; color: #eee; }
         .structure-list li::before { content: '✓'; color: var(--primary-green); font-weight: 900; font-size: 1.8rem; }
 
-        footer {
-            background: linear-gradient(135deg, #ffffff 0%, #e8fdf5 100%);
-            padding: 60px 20px;
-            text-align: center;
-            color: #333;
-            border-top: 1px solid #ddd;
-        }
+        footer { background: linear-gradient(135deg, #ffffff 0%, #e8fdf5 100%); padding: 60px 20px; text-align: center; color: #333; border-top: 1px solid #ddd; }
         .footer-logo { width: 280px; margin-bottom: 25px; }
         .footer-info { max-width: 1000px; margin: 0 auto; font-size: 0.9rem; line-height: 1.8; font-weight: 500; }
         .footer-divider { color: var(--primary-green); font-weight: bold; padding: 0 8px; }
-
-        @media (max-width: 900px) {
-            .payment-card { flex-direction: column; border-radius: 25px; }
-            .investment-side, .registration-side { width: 100%; padding: 40px 20px; }
-            .price-row { font-size: 1rem; } /* Ajuste de fonte mobile */
-            .local-grid, .countdown-wrapper { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3rem; }
-        }
     </style>
 </head>
 <body>
