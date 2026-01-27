@@ -89,8 +89,33 @@
         .section-title { color: var(--accent-green); font-size: 2.5rem; text-transform: uppercase; margin-bottom: 10px; font-weight: 800; }
         .about-text { font-size: 1.15rem; line-height: 1.8; color: #333; max-width: 900px; margin: 0 auto; }
 
-        /* Carrossel */
-        .carousel-section { padding: 100px 0; background-color: var(--section-alt-bg); }
+        /* Carrossel com Vídeo Background */
+        .carousel-section { 
+            padding: 100px 0; 
+            background-color: var(--section-alt-bg); 
+            position: relative; 
+            overflow: hidden; 
+        }
+        
+        .video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            opacity: 0.3; /* Opacidade reduzida */
+            object-fit: cover;
+        }
+
+        .carousel-content {
+            position: relative;
+            z-index: 1; /* Garante que o texto e imagens fiquem na frente */
+        }
+
         .carousel-subtitle { color: #ffffff; font-size: 1.2rem; text-align: center; margin-bottom: 40px; font-weight: 700; font-style: italic; }
         .carousel-container {
             max-width: 1300px;
@@ -233,15 +258,22 @@
 
 
     <section class="carousel-section">
-        <h2 class="section-title" style="color: var(--primary-green); text-align: center;">Memórias que Transformam</h2>
-        <p class="carousel-subtitle">momentos do nosso último retiro</p>
-        <div class="carousel-container">
-            <div class="carousel-track" id="carouselTrack">
-                <div class="carousel-slide"><img src="https://iili.io/fPvEY8l.png" alt="Foto 1"></div>
-                <div class="carousel-slide"><img src="https://iili.io/fPvE7a4.png" alt="Foto 2"></div>
-                <div class="carousel-slide"><img src="https://iili.io/fPvEc92.png" alt="Foto 3"></div>
-                <div class="carousel-slide"><img src="https://iili.io/fPvEluS.png" alt="Foto 4"></div>
-                <div class="carousel-slide"><img src="https://iili.io/fPvEXFj.png" alt="Foto 5"></div>
+        <video autoplay muted loop playsinline class="video-bg">
+            <source src="C:\Users\Davi Lima\Documents\Faculdade\Matérias\Laboratório de Programação\Visual Studio_Davi Lima\01_Igreja\video_retiro.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+        
+        <div class="carousel-content">
+            <h2 class="section-title" style="color: var(--primary-green); text-align: center;">Memórias que Transformam</h2>
+            <p class="carousel-subtitle">momentos do nosso último retiro</p>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide"><img src="https://iili.io/fPvEY8l.png" alt="Foto 1"></div>
+                    <div class="carousel-slide"><img src="https://iili.io/fPvE7a4.png" alt="Foto 2"></div>
+                    <div class="carousel-slide"><img src="https://iili.io/fPvEc92.png" alt="Foto 3"></div>
+                    <div class="carousel-slide"><img src="https://iili.io/fPvEluS.png" alt="Foto 4"></div>
+                    <div class="carousel-slide"><img src="https://iili.io/fPvEXFj.png" alt="Foto 5"></div>
+                </div>
             </div>
         </div>
     </section>
