@@ -217,6 +217,14 @@
             100% { box-shadow: 0 0 5px rgba(55, 230, 166, 0.2); }
         }
 
+        /* --- SEÇÃO LOCAL --- */
+        .local-section { padding: 100px 20px; background: var(--dark-bg); }
+        .local-grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: center; }
+        .local-grid img { width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .structure-list { list-style: none; padding: 0; text-align: left; }
+        .structure-list li { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; color: #eee; }
+        .structure-list li::before { content: '✓'; color: var(--primary-green); font-weight: 900; font-size: 1.8rem; }
+
         /* --- MEDIA QUERIES MOBILE CORRIGIDO --- */
         @media (max-width: 900px) {
             .payment-card { flex-direction: column; border-radius: 25px; }
@@ -228,16 +236,22 @@
             }
             .price-row span:last-child { margin-left: auto; color: #fff; }
 
-            .local-grid, .countdown-wrapper { grid-template-columns: 1fr; }
+            .local-grid { 
+                grid-template-columns: 1fr; 
+                gap: 20px;
+            }
+            .local-grid img { order: 1; } /* Imagem primeiro no mobile */
+            .structure-list { order: 2; }
+            .structure-list li { 
+                font-size: 1.1rem; /* Diminuído para caber melhor */
+                margin-bottom: 12px;
+                gap: 10px;
+            }
+            .structure-list li::before { font-size: 1.3rem; }
+
+            .countdown-wrapper { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.8rem; }
         }
-
-        .local-section { padding: 100px 20px; background: var(--dark-bg); }
-        .local-grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: center; }
-        .local-grid img { width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .structure-list { list-style: none; padding: 0; text-align: left; }
-        .structure-list li { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; color: #eee; }
-        .structure-list li::before { content: '✓'; color: var(--primary-green); font-weight: 900; font-size: 1.8rem; }
 
         footer { background: linear-gradient(135deg, #ffffff 0%, #e8fdf5 100%); padding: 60px 20px; text-align: center; color: #333; border-top: 1px solid #ddd; }
         .footer-logo { width: 280px; margin-bottom: 25px; }
