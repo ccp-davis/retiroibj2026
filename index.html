@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retiro Espiritual - IBJ 2026</title>
+    
+    <link rel="icon" type="image/png" href="https://iili.io/fPsqAR1.md.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <section class="hero hero-main">
+        <img src="https://iili.io/fPkRN5u.png" alt="Logo IBJ" class="church-logo">
+        <p class="hashtag">#IBJ21ANOS</p>
+        <h1>RETIRO ESPIRITUAL - IBJ 2026</h1>
+        <div class="date-badge">13/02 a 17/02 | Chácara Status</div>
+
+        <div class="countdown-wrapper">
+            <div class="countdown-box">
+                <h3>FALTAM PARA O RETIRO:</h3>
+                <div id="customCountdown" class="timer"></div>
+            </div>
+            <div class="countdown-box">
+                <h3>OU (CONTAGEM DETALHADA):</h3>
+                <div id="countdownSoma" class="timer"></div>
+            </div>
+        </div>
+
+        <a href="https://bit.ly/retiroibj26" class="btn-whatsapp">
+            <img src="https://iili.io/fPeplBS.png" alt="WhatsApp">
+            MAIS INFORMAÇÕES E INSCRIÇÃO
+        </a>
+
+        <!-- Botões de navegação para os dias -->
+        <div class="days-navigation">
+            <h3 style="color: var(--primary-green); margin-bottom: 20px; font-size: 1.8rem;">CONFIRA A PROGRAMAÇÃO DE CADA DIA</h3>
+            <div class="days-buttons">
+                <a href="dia1.html" class="btn-day">PRIMEIRO DIA</a>
+                <a href="dia2.html" class="btn-day">SEGUNDO DIA</a>
+                <a href="dia3.html" class="btn-day">TERCEIRO DIA</a>
+                <a href="dia4.html" class="btn-day">QUARTO DIA</a>
+                <a href="dia5.html" class="btn-day">QUINTO DIA</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <h2 class="section-title">Sobre o nosso Retiro</h2>
+        <div class="about-text" style="text-align:justify;">
+            <p>Um tempo separado por Deus para renovo, restauração e comunhão intensa em Sua presença. O retiro é mais do que alguns dias fora da rotina, é um convite para desacelerar e permitir que Deus fale conosco de forma clara.</p>
+            <p>Em meio à correria do dia a dia, muitas vezes nos afastamos do essencial, e o retiro surge como esse espaço de reencontro, cuidado e crescimento espiritual.</p>
+            <p>Prepare o seu coração para dias marcantes de louvor, adoração e celebration, acompanhados de estudo da Palavra de Deus, momentos de oração, comunhão entre irmãos e experiências que fortalecem a fé. Tudo isso vivido em um ambiente acolhedor, cercado pela natureza na Chácara Status.</p>
+            <p>Serão dias para criar memórias, fortalecer vínculos, ouvir a voz de Deus e renovar as forças para continuar a caminhada.</p>
+            <p style="text-align:center; font-weight:700; margin-top:25px;">Vamos juntos nessa jornada!</p>
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <video autoplay muted loop playsinline class="video-bg">
+            <source src="video_retiro.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+        <div class="carousel-content">
+            <h2 class="section-title" style="color: var(--primary-green); text-align: center;">Memórias que Transformam</h2>
+            <p class="carousel-subtitle">momentos dos nossos últimos retiros</p>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide"><img src="https://iili.io/fPvEY8l.png" alt="Foto 1"></div>
+                    <div class="carousel-slide"><img src="https://iili.io/fPvE7a4.png" alt="Foto 2"></div>
+                    <div class="carousel-slide"><img src="https://iili.io/fPvEc92.png" alt="Foto 3"></div>
+                    <div class="carousel-slide"><img src="https://iili.io/fPvEluS.png" alt="Foto 4"></div>
+                    <div class="carousel-slide"><img src="https://iili.io/fPvEXFj.png" alt="Foto 5"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="payment-section">
+        <div class="payment-card">
+            <div class="investment-side">
+                <h2>INVESTIMENTO</h2>
+                <div class="price-list">
+                    <div class="price-row"><span>Adulto (11 anos +)</span> <span>R$ 135,00</span></div>
+                    <div class="price-row"><span>Criança (5-10 anos)</span> <span>R$ 75,00</span></div>
+                    <div class="price-row"><span>Criança (0-4 anos)</span> <span>Uma Oferta</span></div>
+                    <div class="price-row" style="border:none;"><span>Diária</span> <span>R$ 40,00</span></div>
+                </div>
+
+                <div class="form-pag-box">
+                    <strong>Formas de Pagamento:</strong>
+                    <p>- Dinheiro, Pix e Cartão de Crédito e Débito.</p>
+                    
+                    <strong>Parcelamento (Cartão de Crédito):</strong>
+                    <p>- 1 Retiro (até 2x);<br>
+                    - 2 ou mais Retiros (até 3x) | Ambos sem juros.</p>
+                </div>
+            </div>
+
+            <div class="registration-side">
+                <h2>INSCREVA-SE</h2>
+                <p style="margin:0; font-weight: 500;">Clique abaixo para copiar a chave Pix</p>
+                
+                <div class="pix-container" onclick="copyPix()">
+                    <span class="pix-key" id="pixKey">65998446011</span>
+                    <span class="pix-sub" id="copyText">Toque para copiar (Celular)</span>
+                </div>
+
+                <p style="margin-bottom: 15px; font-weight: 500;">(Clique ou escaneie o QR Code)</p>
+                <a href="https://bit.ly/retiroibj26" target="_blank">
+                    <img src="https://iili.io/fPk3sOF.png" alt="QR Code" class="qr-code-img">
+                </a>
+                <p style="margin-top: 20px; font-size: 0.9rem;">
+                    Link para Inscrição: <br>
+                    <a href="https://bit.ly/retiroibj26" style="color:#1a8b64; font-weight:800; text-decoration: none;">bit.ly/retiroibj26</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="local-section">
+        <h2 class="section-title" style="color: var(--primary-green); text-align: center; margin-bottom: 40px;">LOCAL DO NOSSO RETIRO</h2>
+        <div class="local-grid">
+            <img src="https://iili.io/fPebHZB.png" alt="Fotos da Chácara Status">
+            <ul class="structure-list">
+                <li>Piscina;</li>
+                <li>Refeitório;</li>
+                <li>Área Verde;</li>
+                <li>Espaço de Comunhão e Lazer;</li>
+                <li>Campo de Futebol;</li>
+                <li>Espaço para Barracas e Casa de Apoio;</li>
+                <li>Área de Cultos e Celebrações.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <img src="https://iili.io/fPkQ1cb.png" alt="Logo Retiro" class="footer-logo">
+        <div class="footer-info">
+            Igreja Batista no Jardim <span class="footer-divider">|</span> 07.851.665/0001-58 <span class="footer-divider">|</span> Rua das Margaridas, Nº50, Jd. Padre Paulo, Cáceres-MT <br>
+            (65) 99844-6011 <span class="footer-divider">|</span> Pr. Anderson José <span class="footer-divider">|</span> OPBB7911
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
