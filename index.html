@@ -84,12 +84,10 @@
         .btn-whatsapp img { width: 25px; }
         .btn-whatsapp:hover { background: #128c7e; transform: translateY(-3px); }
 
-        /* Sobre o Retiro */
         .about-section { padding: 100px 20px; text-align: center; background-color: #ffffff; color: #1a1a1a; }
         .section-title { color: var(--accent-green); font-size: 2.5rem; text-transform: uppercase; margin-bottom: 10px; font-weight: 800; }
         .about-text { font-size: 1.15rem; line-height: 1.8; color: #333; max-width: 900px; margin: 0 auto; }
 
-        /* Carrossel com Vídeo Background */
         .carousel-section { 
             padding: 100px 0; 
             background-color: var(--section-alt-bg); 
@@ -136,25 +134,115 @@
             object-fit: contain;
         }
 
-        /* Inscrição e Pagamento */
-        .payment-section { padding: 100px 20px; background: #fff; color: #1a1a1a; }
-        .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto; align-items: start; }
+        /* --- SEÇÃO DE PAGAMENTO --- */
+        .payment-section { padding: 80px 20px; background-color: #f4f4f4; }
         
-        .investment-box { text-align: left; background: var(--light-gray); padding: 30px; border-radius: 20px; }
-        .price-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed #ccc; font-weight: 700; }
-        .price-label { color: #555; }
-        .price-value { color: var(--accent-green); font-size: 1.2rem; }
+        .payment-card {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 35px;
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            color: #1a1a1a;
+        }
 
-        .payment-info-text { margin-top: 25px; font-size: 0.95rem; line-height: 1.6; color: #1a1a1a; border-top: 2px solid var(--primary-green); padding-top: 15px; }
+        .investment-side {
+            background-color: #1a8b64;
+            color: #fff;
+            padding: 60px 50px;
+            width: 45%;
+        }
 
-        .pix-payment-box { text-align: center; }
-        .pix-key-display { background: var(--dark-bg); color: var(--primary-green); padding: 15px; border-radius: 10px; font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; display: block; }
-        
-        .qr-link { display: inline-block; transition: transform 0.3s; text-decoration: none; color: inherit; }
-        .qr-link:hover { transform: scale(1.05); }
-        .qr-code-img { width: 240px; margin-top: 20px; border-radius: 10px; padding: 10px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #eee; }
+        .investment-side h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            margin: 0 0 30px 0;
+            letter-spacing: 2px;
+        }
 
-        /* Local do Retiro */
+        .price-list { margin-bottom: 30px; }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .form-pag-box {
+            background: rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        .form-pag-box strong { display: block; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+        .form-pag-box p { margin: 0 0 15px 0; font-size: 0.85rem; line-height: 1.5; opacity: 0.9; }
+        .form-pag-box p:last-child { margin-bottom: 0; }
+
+        .registration-side {
+            padding: 60px 50px;
+            width: 55%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .registration-side h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #1a8b64;
+            font-size: 3.2rem;
+            margin: 0 0 25px 0;
+            letter-spacing: 1px;
+        }
+
+        .pix-container {
+            border: 2px dashed #d1d1d1;
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            margin: 15px 0 30px 0;
+            background-color: #fafafa;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .pix-container:hover { background-color: #f0f0f0; border-color: #1a8b64; }
+        .pix-key {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1a8b64;
+            margin-bottom: 5px;
+        }
+        .pix-sub { font-size: 0.8rem; color: #777; font-weight: 600; }
+
+        /* QR Code Animado */
+        .qr-code-img {
+            width: 220px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: glowPulse 2s infinite ease-in-out;
+        }
+        .qr-code-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(55, 230, 166, 0.6);
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 5px rgba(55, 230, 166, 0.2); }
+            50% { box-shadow: 0 0 15px rgba(55, 230, 166, 0.5); }
+            100% { box-shadow: 0 0 5px rgba(55, 230, 166, 0.2); }
+        }
+
         .local-section { padding: 100px 20px; background: var(--dark-bg); }
         .local-grid { display: grid; grid-template-columns: 2.2fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: center; }
         .local-grid img { width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
@@ -162,7 +250,6 @@
         .structure-list li { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; color: #eee; }
         .structure-list li::before { content: '✓'; color: var(--primary-green); font-weight: 900; font-size: 1.8rem; }
 
-        /* Rodapé */
         footer {
             background: linear-gradient(135deg, #ffffff 0%, #e8fdf5 100%);
             padding: 60px 20px;
@@ -175,7 +262,9 @@
         .footer-divider { color: var(--primary-green); font-weight: bold; padding: 0 8px; }
 
         @media (max-width: 900px) {
-            .payment-grid, .local-grid, .countdown-wrapper { grid-template-columns: 1fr; }
+            .payment-card { flex-direction: column; border-radius: 25px; }
+            .investment-side, .registration-side { width: 100%; padding: 40px 20px; }
+            .local-grid, .countdown-wrapper { grid-template-columns: 1fr; }
             .hero h1 { font-size: 3rem; }
         }
     </style>
@@ -184,7 +273,6 @@
 
     <section class="hero">
         <img src="https://iili.io/fPkRN5u.png" alt="Logo IBJ" class="church-logo">
-        
         <p class="hashtag">#IBJ21ANOS</p>
         <h1>RETIRO ESPIRITUAL - IBJ 2026</h1>
         <div class="date-badge">13/02 a 17/02 | Chácara Status</div>
@@ -206,35 +294,14 @@
         </a>
     </section>
 
-    <section style="padding:100px 20px; text-align:center; background-color:#ffffff; color:#1a1a1a;">
-    
-        <h2 style="color:#1a8b64; font-size:2.5rem; text-transform:uppercase; margin-bottom:25px; font-weight:800;">
-            Sobre o nosso Retiro
-        </h2>
-
-        <div style="font-size:1.15rem; line-height:1.8; color:#333; max-width:900px; margin:0 auto; text-align:justify;">
-            <p>
-                Um tempo separado por Deus para renovo, restauração e comunhão intensa em Sua presença.
-                O retiro é mais do que alguns dias fora da rotina, é um convite para desacelerar e permitir
-                que Deus fale conosco de forma clara.
-            </p>
-            <p>
-                Em meio à correria do dia a dia, muitas vezes nos afastamos do essencial, e o retiro surge
-                como esse espaço de reencontro, cuidado e crescimento espiritual.
-            </p>
-            <p>
-                Prepare o seu coração para dias marcantes de louvor, adoração e celebração, acompanhados
-                de estudo da Palavra de Deus, momentos de oração, comunhão entre irmãos e experiências
-                que fortalecem a fé. Tudo isso vivido em um ambiente acolhedor, cercado pela natureza
-                na Chácara Status.
-            </p>
-            <p>
-                Serão dias para criar memórias, fortalecer vínculos, ouvir a voz de Deus e renovar as forças
-                para continuar a caminhada.
-            </p>
-            <p style="text-align:center; font-weight:700; margin-top:25px;">
-                Vamos juntos nessa jornada!
-            </p>
+    <section class="about-section">
+        <h2 class="section-title">Sobre o nosso Retiro</h2>
+        <div class="about-text" style="text-align:justify;">
+            <p>Um tempo separado por Deus para renovo, restauração e comunhão intensa em Sua presença. O retiro é mais do que alguns dias fora da rotina, é um convite para desacelerar e permitir que Deus fale conosco de forma clara.</p>
+            <p>Em meio à correria do dia a dia, muitas vezes nos afastamos do essencial, e o retiro surge como esse espaço de reencontro, cuidado e crescimento espiritual.</p>
+            <p>Prepare o seu coração para dias marcantes de louvor, adoração e celebração, acompanhados de estudo da Palavra de Deus, momentos de oração, comunhão entre irmãos e experiências que fortalecem a fé. Tudo isso vivido em um ambiente acolhedor, cercado pela natureza na Chácara Status.</p>
+            <p>Serão dias para criar memórias, fortalecer vínculos, ouvir a voz de Deus e renovar as forças para continuar a caminhada.</p>
+            <p style="text-align:center; font-weight:700; margin-top:25px;">Vamos juntos nessa jornada!</p>
         </div>
     </section>
 
@@ -243,7 +310,6 @@
             <source src="video_retiro.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
-        
         <div class="carousel-content">
             <h2 class="section-title" style="color: var(--primary-green); text-align: center;">Memórias que Transformam</h2>
             <p class="carousel-subtitle">momentos dos nossos últimos retiros</p>
@@ -260,31 +326,43 @@
     </section>
 
     <section class="payment-section">
-        <div class="payment-grid">
-            <div class="investment-box">
-                <h2 style="margin-top:0">Investimento</h2>
-                <div class="price-item"><span class="price-label">Adulto (11 anos +)</span> <span class="price-value">R$ 135,00</span></div>
-                <div class="price-item"><span class="price-label">Criança (5-10 anos)</span> <span class="price-value">R$ 75,00</span></div>
-                <div class="price-item"><span class="price-label">Criança (0-4 anos)</span> <span class="price-value">Uma Oferta</span></div>
-                <div class="price-item"><span class="price-label">Diária</span> <span class="price-value">R$ 40,00</span></div>
-                
-                <div class="payment-info-text">
-                    <strong>Formas de Pagamento:</strong><br>
-                    Cartão (Crédito e Débito), Dinheiro ou Pix.<br>
-                    Cartão de Crédito: 1 Retiro (2x) | 2 ou mais Retiros (3x) | Ambos sem juros.
+        <div class="payment-card">
+            <div class="investment-side">
+                <h2>INVESTIMENTO</h2>
+                <div class="price-list">
+                    <div class="price-row"><span>Adulto (11 anos +)</span> <span>R$ 135,00</span></div>
+                    <div class="price-row"><span>Criança (5-10 anos)</span> <span>R$ 75,00</span></div>
+                    <div class="price-row"><span>Criança (0-4 anos)</span> <span>Uma Oferta</span></div>
+                    <div class="price-row" style="border:none;"><span>Diária</span> <span>R$ 40,00</span></div>
+                </div>
+
+                <div class="form-pag-box">
+                    <strong>Formas de Pagamento:</strong>
+                    <p>- Dinheiro, Pix e Cartão de Crédito e Débito.</p>
+                    
+                    <strong>Parcelamento (Cartão de Crédito):</strong>
+                    <p>- 1 Retiro (até 2x);<br>
+                    - 2 ou mais Retiros (até 3x) | Ambos sem juros.</p>
                 </div>
             </div>
 
-            <div class="pix-payment-box">
-                <h2 style="margin-top:0">Inscrição e Pagamento</h2>
-                <p>Chave Pix (Telefone):</p>
-                <span class="pix-key-display">65 99844-6011</span>
-                <p>Link para Inscrição: <br><a href="https://bit.ly/retiroibj26" style="color:#007bff; font-weight:bold; text-decoration: none;">bit.ly/retiroibj26</a></p>
+            <div class="registration-side">
+                <h2>INSCREVA-SE</h2>
+                <p style="margin:0; font-weight: 500;">Clique abaixo para copiar a chave Pix</p>
                 
-                <a href="https://bit.ly/retiroibj26" class="qr-link" target="_blank">
-                    <img src="https://iili.io/fPk3sOF.png" alt="QR Code Inscrição" class="qr-code-img">
+                <div class="pix-container" onclick="copyPix()">
+                    <span class="pix-key" id="pixKey">65998446011</span>
+                    <span class="pix-sub" id="copyText">Toque para copiar (Celular)</span>
+                </div>
+
+                <p style="margin-bottom: 15px; font-weight: 500;">(Clique ou escaneie o QR Code)</p>
+                <a href="https://bit.ly/retiroibj26" target="_blank">
+                    <img src="https://iili.io/fPk3sOF.png" alt="QR Code" class="qr-code-img">
                 </a>
-                <p style="font-size: 0.8rem; color: #777; margin-top: 5px; font-weight: bold;">(Clique ou escaneie o QR Code)</p>
+                <p style="margin-top: 20px; font-size: 0.9rem;">
+                    Link para Inscrição: <br>
+                    <a href="https://bit.ly/retiroibj26" style="color:#1a8b64; font-weight:800; text-decoration: none;">bit.ly/retiroibj26</a>
+                </p>
             </div>
         </div>
     </section>
@@ -314,6 +392,19 @@
     </footer>
 
     <script>
+        function copyPix() {
+            const pixValue = "65998446011";
+            navigator.clipboard.writeText(pixValue).then(() => {
+                const copyText = document.getElementById('copyText');
+                copyText.innerText = "✅ Copiado!";
+                copyText.style.color = "#1a8b64";
+                setTimeout(() => {
+                    copyText.innerText = "Toque para copiar (Celular)";
+                    copyText.style.color = "#777";
+                }, 2000);
+            });
+        }
+
         const targetDate = new Date('2026-02-13T18:00:00');
         function updateTimers() {
             const now = new Date();
@@ -350,4 +441,3 @@
     </script>
 </body>
 </html>
-
