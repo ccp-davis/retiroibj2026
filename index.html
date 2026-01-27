@@ -12,6 +12,37 @@
 </head>
 <body>
 
+    <!-- Botão Home -->
+    <a href="index.html" class="home-button" title="Página Inicial">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+    </a>
+
+    <!-- Menu hambúrguer -->
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+
+    <!-- Menu overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <h2>PROGRAMAÇÃO</h2>
+            <div class="menu-links">
+                <a href="index.html" class="menu-link home">PÁGINA INICIAL</a>
+                <a href="dia1.html" class="menu-link">PRIMEIRO DIA</a>
+                <a href="dia2.html" class="menu-link">SEGUNDO DIA</a>
+                <a href="dia3.html" class="menu-link">TERCEIRO DIA</a>
+                <a href="dia4.html" class="menu-link">QUARTO DIA</a>
+                <a href="dia5.html" class="menu-link">QUINTO DIA</a>
+            </div>
+        </div>
+    </div>
+
     <section class="hero hero-main">
         <div style="height: 140px; margin-bottom: 20px; visibility: hidden;"></div> <!-- Espaçador para manter o texto na mesma posição -->
         <p class="hashtag">#IBJ21ANOS</p>
