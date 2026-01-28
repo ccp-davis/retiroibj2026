@@ -515,7 +515,16 @@ h1 {
     100% { box-shadow: 0 0 5px rgba(55, 230, 166, 0.2); }
 }
 
-.local-section { padding: 100px 20px; background: var(--dark-bg); }
+.local-section { padding: 100px 20px; background: var(--dark-bg); text-align: center; }
+
+.local-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Imagem agora ocupa o dobro do espaço do texto */
+    gap: 40px;
+    max-width: 1400px; /* Largura máxima expandida para quase toda a tela */
+    margin: 0 auto;
+    align-items: center;
+}
 .vagas-container {
     max-width: 800px;
     margin: 0 auto 50px auto;
@@ -615,10 +624,10 @@ h1 {
 
     .local-grid { 
         grid-template-columns: 1fr; 
-        gap: 20px;
+        gap: 30px;
     }
-    .local-grid img { order: 1; }
-    .structure-list { order: 2; }
+    .local-grid img { order: 1; max-width: 100%; }
+    .structure-list { order: 2; padding: 0 10px; }
     .structure-list li { 
         font-size: 1.1rem;
         margin-bottom: 12px;
