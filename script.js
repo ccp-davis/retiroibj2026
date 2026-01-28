@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 setTimeout(() => {
-                    vagasBar.style.width = '55%';
+                    vagasBar.style.width = '63%';
                 }, 300); // Pequeno atraso para garantir que a transição seja visível
                 observer.disconnect(); // Anima apenas uma vez
             }
