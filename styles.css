@@ -516,13 +516,65 @@ h1 {
 }
 
 .local-section { padding: 100px 20px; background: var(--dark-bg); }
-.local-grid { 
-    display: grid; 
-    grid-template-columns: 2.2fr 1fr; 
-    gap: 40px; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    align-items: center; 
+.vagas-container {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.vagas-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(55, 230, 166, 0.3);
+    margin-bottom: 15px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%; /* Animado via JS */
+    background: linear-gradient(90deg, var(--accent-green), var(--primary-green));
+    border-radius: 15px;
+    transition: width 2s cubic-bezier(0.1, 0.5, 0.5, 1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15px;
+    box-shadow: 0 0 15px rgba(55, 230, 166, 0.4);
+}
+
+.progress-text {
+    color: white;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.vagas-alert {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ff4d4d;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.registration-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
 }
 .local-grid img { 
     width: 100%; 

@@ -89,3 +89,21 @@ if (menuOverlay) {
         }
     });
 }
+
+// Animação da Barra de Vagas
+document.addEventListener('DOMContentLoaded', () => {
+    const vagasBar = document.getElementById('vagasBar');
+    if (vagasBar) {
+        // Usando Intersection Observer para animar quando a seção fica visível
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                setTimeout(() => {
+                    vagasBar.style.width = '55%';
+                }, 300); // Pequeno atraso para garantir que a transição seja visível
+                observer.disconnect(); // Anima apenas uma vez
+            }
+        }, { threshold: 0.5 }); // Inicia quando 50% da seção estiver visível
+
+        observer.observe(document.querySelector('.vagas-container'));
+    }
+});
